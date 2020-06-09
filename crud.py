@@ -54,16 +54,12 @@ class Delete:
         beforein = json.loads(before)
         print(before)
         print(beforein)
-        now = { "$set": { "is_deleted": "true" } }
-        MYCOL.update_one(beforein,now)
+        now = {"$set": {"is_deleted": "true"}}
+        MYCOL.update_one(beforein, now)
         print('record deleted')
 
-
-
-def main():
-    """
-    fill here
-    """
+def addordell():
+    """add or delete options function"""
     addordel = str(input('Question : add or delete? (a/d)'))
 
     if addordel == 'a':
@@ -81,7 +77,22 @@ def main():
     else:
         print('apa?')
 
-    
+
+def main():
+    """ fill here """
+
+    addordell()
+
+    i = 0
+    while i < 6:
+        again = str(input('Question : try again? (y/n)'))
+        if again == "y":
+            addordell()
+        else:
+            print('bye')
+            break
+
+    print('thank you')
 
 if __name__ == '__main__':
     main()
