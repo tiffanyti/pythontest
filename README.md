@@ -6,13 +6,14 @@ Language　：　Python
 Database　：　MongoDB@4.2
 
 Contents　：
+- dump : mongoDB dump data
 - database : database list
-- crud : delete and add collection
+- crud : create, edit, delete and view collection
 
 ## How to use?
-- activate file you want to try (ex python crud.py)
+- activate file you want to try (ex crud.py)
 ```bash
 python crud.py
 ```
-- add and delete a collection/record in crud.py file.
-(you can add up to 7 times in one time)
+- view,create, edit and delete a collection/record in crud.py file.
+(you can add/delete and edit up to 5 times in one time)

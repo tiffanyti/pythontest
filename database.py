@@ -7,14 +7,12 @@ MYCOL = MYDB["customers"]
 
 try:
     pymongo.MongoClient()
-    print("Connected successfully!!!")
+    print("Connected successfully to database")
 except:
     print("Could not connect to MongoDB")
 
-print(MYCLIENT.list_database_names())
+print("\n", 22*"=", "\n")
 
-COLL = MYCOL.find()
-for record in COLL:
-    print(record)
+print('list of databases :', MYCLIENT.list_database_names())
 
-print(__name__)
+print("\n", 22*"=", "\n")
