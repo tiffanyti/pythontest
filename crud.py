@@ -43,7 +43,9 @@ class Edit:
     def showdata(self):
         """ print before change """
 
-        print('name :', self.name, '\n', 'change ', self.key, ':', self.prev_value, ' ->', self.new_value)
+        find = MYCOL.find({"name": self.name})
+        for record in find:
+            print(record)
 
     def changedata(self):
         """ change member in db """
@@ -114,8 +116,10 @@ def edit():
     new = str(input('new data :'))
 
     editrecord = Edit(name, key, prev, new)
+    print('data with same name :')
     editrecord.showdata()
 
+    print('name :', name, '\n', 'change ', key, ':', prev, ' ->', new)
     question = (str(input('change? (y/n)')))
     if question == 'y':
         editrecord.changedata()
@@ -130,6 +134,7 @@ def view():
     collections = MYCOL.find()
     for record in collections:
         print(record)
+    #print('total data :', collections.count())
 
 
 def main():
